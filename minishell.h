@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/08 02:11:47 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/17 17:09:42 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:31:47 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MINISHELL_H
 
 // Includes
-# include "../libft/includes/libft.h"
+# include "./libft/includes/libft.h"
 # include "ms_macros.h"
 # include "ms_structs.h"
 # include <stdlib.h>

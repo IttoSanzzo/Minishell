@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/08 08:38:58 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/17 22:31:24 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -25,20 +25,40 @@ C_PUTS	= printf
 
 D_HDRS	= -I ./includes/
 D_LBFT	= ./libft/
-D_SRCS	= srcs/
+D_SRCS	= ./
 D_OBJS	= objs/
 
 # Sources & Objects
 
-N_MAIN	= $(shell ls $(D_SRCS)/main/ | grep -E ".+\.c")
-N_BLTN	= $(shell ls $(D_SRCS)/builtins/ | grep -E ".+\.c")
-	
-F_SRCS	= $(addprefix $(D_SRCS)/main/, $(N_MAIN))	\
-	$(addprefix $(D_SRCS)/builtins/, $(N_BLTN))	\
+N_MAIN	= main.c		\
+	  ms_builtin_cd.c	\
+	  ms_builtin_echo.c	\
+	  ms_builtin_env.c	\
+	  ms_builtin_exit.c	\
+	  ms_builtin_export.c	\
+	  ms_builtin_pwd.c	\
+	  ms_builtin_unset.c	\
+	  ms_builtins_switch.c	\
+	  ms_check_tokens.c	\
+	  ms_exec_vex.c		\
+	  ms_expand.c		\
+	  ms_fd_changers.c	\
+	  ms_format_line.c	\
+	  ms_found_hdoc.c	\
+	  ms_gen_vex.c		\
+	  ms_gets.c		\
+	  ms_parse.c		\
+	  ms_prompt.c		\
+	  ms_readline.c		\
+	  ms_redirects.c	\
+	  ms_redirects_finish.c	\
+	  ms_split.c		\
+	  ms_utils.c		\
+	  ms_vex_finish.c	\
+	  signal.c
 
-N_OBJS	= $(N_MAIN:.c=.o)	\
-	$(N_BLTN:.c=.o)		\
-
+F_SRCS	= $(addprefix $(D_SRCS)/$(N_MAIN))
+N_OBJS	= $(N_MAIN:.c=.o)
 F_OBJS	= $(addprefix $(D_OBJS), $(N_OBJS))
 
 # Libft
@@ -66,7 +86,7 @@ $(NAME)		: $(F_LBFT) $(D_OBJS) $(F_OBJS)
 	@$(C_COMP) $(C_FLAG) -o $@ $(F_OBJS) $(F_LBFT) $(C_RDLN)
 	@$(C_PUTS) "$(P_GREEN)Done!$(P_WHITE)\n"
 
-$(D_OBJS)%.o	: $(D_SRCS)/*/%.c
+$(D_OBJS)%.o	: $(D_SRCS)/%.c
 	@$(C_PUTS) "\t$(P_PRPLE)Generating $(NAME)..: %-33.33s\r $(P_WHITE)" $@
 	@$(C_COMP) $(C_FLAG) $(D_HDRS) -c $< -o $@ $(C_RDLN)
 
