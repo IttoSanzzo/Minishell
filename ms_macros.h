@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/07 01:48:11 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/17 18:47:28 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/17 22:33:01 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MS_MACROS_H
 
 // Readline version (0 - Mine ; 1 - Original)
-# define READLINE 0
+# define READLINE 1
 
 // Messages
 # define EXIT_MSS "\033[38;5;43mExiting now...\n\033[0m"
