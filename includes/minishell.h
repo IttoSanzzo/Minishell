@@ -14,7 +14,7 @@
 # define MINISHELL_H
 
 // Includes
-# include "./libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 # include "ms_macros.h"
 # include "ms_structs.h"
 # include <stdlib.h>

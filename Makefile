@@ -25,7 +25,7 @@ C_PUTS	= printf
 
 D_HDRS	= -I ./includes/
 D_LBFT	= ./libft/
-D_SRCS	= ./
+D_SRCS	= ./srcs/
 D_OBJS	= objs/
 
 # Sources & Objects
