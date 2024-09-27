@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*									      */
-/*							  :::	   ::::::::   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
-/*						      +:+ +:+	      +:+     */
-/*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
-/*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/17 02:16:44 by marcosv2         ###   ########.fr       */
-/*									      */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/19 20:08:31 by marcosv2          #+#    #+#             */
+/*   Updated: 2024/04/19 18:58:03 by marcosv2         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
@@ -51,6 +51,8 @@ char	*ft_itoa(int n);
 int		ft_atoi(const char *nptr);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_ftos(char *file, char **output);
+int		ft_ftot(char *file, char ***output, char c);
 
 //// ft_mem
 t_clist	*ft_nfreeclst(t_clist **mem);
@@ -68,6 +70,7 @@ char	**ft_nfreetab(char ***mem);
 char	*ft_nfreestr(char **mem);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_gint(int id, size_t act, int val);
+int		**ft_nfreeitab(int ***itab);
 
 //// ft_put
 void	ft_puttab(char **tab, char *prompt);
@@ -84,6 +87,7 @@ void	ft_putclstpos(t_clist *lst, int pos);
 void	ft_putnclst(t_clist *lst, int n);
 void	ft_putclst(t_clist *lst);
 void	ft_putclstval(t_clist *lst);
+void	ft_putitab(int **tab, char *prompt, char *divider, int stop);
 
 //// ft_str
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -109,6 +113,8 @@ char	*ft_strdup(const char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strchp(char *s, char c);
+void	ft_strchrep(char *str, char trg, char rep);
+char	*ft_strchrem(char **str, char c);
 
 //// ft_strman
 char	*ft_stradd_bgn(char **old, char add);
@@ -134,6 +140,8 @@ char	**ft_freetab(char **tab);
 char	**ft_tabdup(char **old);
 void	ft_tabrem_qbl(char **tab);
 int		ft_tablen(char **tab);
+void	ft_tabchrep(char **tab, char trg, char rep);
+char	**ft_tabchrem(char ***tab, char c);
 
 //// ft_ansi
 void	ft_ansi_drl(char *prompt);
@@ -160,6 +168,9 @@ int		ft_getstr_p(char **tab, char const *name);
 int		ft_getarg_p(char **tab, char const *name);
 int		ft_getchar(void);
 int		ft_getchar_unb(int dsecs);
+void	ft_endl(unsigned int n);
+int		ft_check_file(char *file);
+int		ft_check_ext(char *file, char *ext);
 
 //// ft_list
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
